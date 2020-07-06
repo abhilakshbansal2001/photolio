@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<title>Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1 {font-family: "Montserrat", sans-serif;
+    letter-spacing:3px;
+}
+footer{
+    background-color: #f4f6ff;
+    
+}
+.w3-row-padding img {margin-bottom: 12px}
+/* font-family: 'Montserrat', sans-serif; */
+img {
+    width: 100%;
+    min-height: 200px;
+   
+}
+img:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+.preview{
+    /* display: none; */
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+.preview::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0);
+
+}
+.preview-sub-div{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+}
+/* .main{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+} */
+
+
+</style>
+<body>
+
+    <!-- <div class="w3-container preview">
+        <div class="preview_sub-div">
+            nfoin
+            <img  class = "imagePreview" src="" alt="">
+        </div>
+    </div> -->
+
+    <!-- page content -->
+<div class="w3-content main">
+    <header>
+        <div class="w3-center w3-opacity w3-16 w3-bottom-margin"  style="margin-bottom:50px">
+            <h1>Portfolio</h1>
+            <p>A professional Photograph Portfolio</p>
+            <button id="toggle" onclick="myFunction()" class="w3-btn w3-grey ">Toggle Me</button>
+        </div>
+        
+    </header>
+
+
+    <div class="w3-row" id="grid" style="margin-bottom:128px">
+        <div class="w3-third">
+            <img src=" https://source.unsplash.com/1600x900/?nature" alt="">
+            <img src=" https://source.unsplash.com/1600x900/?sky/1920x1080" alt="">
+            <img src=" https://source.unsplash.com/1600x900/?beauty" alt="">
+            <img src=" https://source.unsplash.com/1600x900/?city" alt="">
+            <img src=" https://source.unsplash.com/1600x900/?people" alt="">
+            <img src=" https://source.unsplash.com/1600x900/?animal" alt="">
+        </div>
+        <div class="w3-third">
+            <img src=" https://source.unsplash.com/1600x900/?elephant" alt="">
+            <img src=" https://source.unsplash.com/1600x900/?computer" alt="">
+            <img src=" https://source.unsplash.com/1600x900/?facebook/1600x900" alt="">
+            <img src=" https://source.unsplash.com/1600x900/?headphone" alt="">
+            <img src=" https://source.unsplash.com/1600x900/?keyboard" alt="">
+            <img src=" https://source.unsplash.com/1600x900/?desktop" alt="">
+        </div>
+        <div class="w3-third">
+            <img src=" https://source.unsplash.com/1600x900/?bed" alt="">
+            <img src=" https://source.unsplash.com/1600x900/?earth" alt="">
+            <img src=" https://source.unsplash.com/1600x900/?sun" alt="">
+            <img src=" https://source.unsplash.com/1600x900/?box" alt="">
+            <img src=" https://source.unsplash.com/1600x900/?water" alt="">
+            <img src=" https://source.unsplash.com/1600x900/?javascript/1600x900" alt="">
+        </div>
+    </div>
+
+</div>
+    <footer class="w3-opacity w3-xlarge w3-padding-64 w3-center "> 
+        <p>Follow us:</p>
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-snapchat"></i>
+        <i class="fa fa-linkedin"></i>
+        <i class="fa fa-pintrest"></i>
+        
+    </footer>
+
+    <script>
+       const btn =  document.getElementById("toggle");
+       const grid=  document.getElementById("grid");
+
+       function myFunction() {
+
+  if (grid.className === "w3-row") {
+    grid.className = "w3-row-padding";
+   
+  } else { 
+    grid.className = grid.className.replace("w3-row-padding", "w3-row");
+  }
+}
+
+    const img = document.querySelectorAll("img");
+    img.forEach(e => {
+        e.addEventListener("click" , (event) => {
+            console.log(event.target.src);
+            preview(event.target.src)
+        })
+    })
+    function preview(src){
+        document.body.innerHTML = `
+
+        
+        `;
+    }
+
+    </script>
+
+</body>
+
+
+</html>
